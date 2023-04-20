@@ -4,13 +4,17 @@ public class Question2
 {
   public static void main(String[] args)
   {
-    /**
-     * Prompts user for height and weight, calculate and print out the BMI of the user
-     * 
-     * Hint: in.nextDouble() to read double
-     */
-     
-    Scanner in = new Scanner(System.in);
-    double height = in.nextDouble();
+    
+    Scanner height = new Scanner(System.in);
+    System.out.print("Enter height: ");  
+    double h = height.nextDouble();
+    
+    Scanner weight = new Scanner(System.in);
+    System.out.print("Enter weight: ");  
+    double w = weight.nextDouble();
+
+    double bmi = w / (h * h);
+    
+    System.out.print(String.format("BMI is %f", bmi));  
   }
 }
