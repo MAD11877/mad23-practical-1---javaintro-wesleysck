@@ -10,7 +10,11 @@ public class Question3
      * Hint: in.nextInt() to read integer
      */
      
-    Scanner in = new Scanner(System.in);
-    
+    Scanner integer = new Scanner(System.in);
+    System.out.print("Enter an integer: ");
+    int i = integer.nextInt();
+
+    int power = i * i;
+    System.out.print(String.format("Number multiplied by itself is %s.", power));
   }
 }
