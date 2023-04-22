@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
+
 public class Question2
 {
   
   public static void main(String[] args)
   {
-    
+    import java.util.Scanner;
     Scanner height = new Scanner(System.in);
     System.out.print("");  
     double h = height.nextDouble();
