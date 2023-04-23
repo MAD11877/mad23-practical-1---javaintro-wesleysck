@@ -1,32 +1,49 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.*;
+import java.util.Map.*;
 
 public class Question5
 {
-  public static void main(String[] args)
-  {
-    /**
-     * Prompt the user for number. This input indicates the number of integers the user will be entering next. 
-     * Print out the mode (highest occurrence) from the set of integers. 
-     *    e.g.
-     *     > 5
-     *     > 2
-     *     > 4
-     *     > 1
-     *     > 3
-     *     > 4
-     *     4
-     * 
-     *    e.g.
-     *     > 4
-     *     > 2
-     *     > 2
-     *     > 3
-     *     > 3
-     *     2
-     * Hint: Use a loop to get input. Use another 2 loops to find the mode
-     */
-     
-    Scanner in = new Scanner(System.in);
-    
+  public static void main(String[] args) {
+  
+
+    Scanner scanner = new Scanner(System.in);
+
+    int num;
+    int input;
+
+    System.out.print("");
+    num = scanner.nextInt();
+
+    ArrayList<Integer> list = new ArrayList<>();
+
+    for (int i = 0; i < num; i++) {
+      System.out.print("");
+      input = scanner.nextInt();
+      list.add(input);
+    }
+
+    HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+    for (int i = 0; i < list.size(); i++) {
+      if (map.containsKey(list.get(i)) == false) {
+        map.put(list.get(i), 1);
+      }
+
+      else {
+        map.put(list.get(i), (map.get(list.get(i)) + 1));
+      }
+    }
+
+    int maxval = (Collections.max(map.values()));
+
+    for (Entry<Integer, Integer> entry : map.entrySet()) {
+      if (entry.getValue() == maxval) {
+        System.out.println(entry.getKey());
+      }
+    }
+
   }
 }
